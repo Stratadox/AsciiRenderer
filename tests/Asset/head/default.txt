@@ -1,0 +1,18 @@
+mask:
+width: 5
+height: 2
+origin-x: 1
+origin-y: 1
+
+refs:
+0: headgear
+
+mask-frames:
+1
+ ...
+#0###
+
+frames:
+1
+ ...
+(' *}

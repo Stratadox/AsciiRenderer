@@ -1,0 +1,34 @@
+{
+  "name": "character",
+  "parts": [
+    {
+      "name": "item1",
+      "dir": "item",
+      "type": "image"
+    },
+    {
+      "name": "headgear",
+      "dir": "headgear",
+      "type": "image"
+    },
+    {
+      "name": "head",
+      "dir": "head",
+      "type": "image"
+    },
+    {
+      "name": "body",
+      "dir": "body",
+      "type": "animation",
+      "duration": 8
+    }
+  ],
+  "depth-order": [
+    "item1",
+    "headgear",
+    "head",
+    "body",
+    "item2"
+  ],
+  "origin": "body"
+}

@@ -1,0 +1,23 @@
+mask:
+origin-x: 1
+origin-y: 3
+width: 5
+height: 6
+
+mask-frames:
+1
+ .##
+#####
+ ###
+ #
+ #
+ #
+
+frames:
+1
+ ./\
+<)+))
+ |\/
+ |
+ |
+ o

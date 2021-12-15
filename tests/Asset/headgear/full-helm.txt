@@ -1,0 +1,17 @@
+mask:
+width: 6
+height: 3
+origin-x: 2
+origin-y: 2
+
+mask-frames:
+1
+ #...
+######
+######
+
+frames:
+1
+ )--.
+(---=]
+|____\
