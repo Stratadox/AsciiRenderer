@@ -42,11 +42,11 @@ final class Character
         return $this->char;
     }
 
-    public function drawOnto(Character $other): Character
+    public function drawOnto(Character $other, string ...$insignificant): Character
     {
         return match ($this->solidity()) {
             self::OPEN => $other,
-            self::SEMI => $other->solid() ? $other : $this,
+            self::SEMI => ($other->solid() && !in_array((string) $other, $insignificant)) ? $other : $this,
             self::SOLID => $this,
             default => Character::none(),
         };

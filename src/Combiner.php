@@ -4,6 +4,14 @@ namespace Stratadox\AsciiRenderer;
 
 final class Combiner
 {
+    public function __construct(
+        private array $insignificant = [
+            ' ',
+            '_',
+            '.',
+        ]
+    ) {}
+
     /**
      * @param array<string, Image> $images
      * @param string $root
@@ -14,7 +22,6 @@ final class Combiner
     {
         assert(isset($images[$root]));
         $shifted = $this->shiftImages($images[$root], $images);
-//        var_dump($shifted);
         $dimensions = new Dimensions(
             new Coordinate(
                 min(array_map(function (Image $i): int { return $i->x1(); }, $shifted)),
@@ -31,7 +38,7 @@ final class Combiner
             for ($x = $dimensions->x1(); $x < $dimensions->x2(); $x++) {
                 $character = Character::none();
                 foreach ($images as $tag => $image) {
-                    $character = $shifted[$tag]->characterAt($x, $y)->drawOnto($character);
+                    $character = $shifted[$tag]->characterAt($x, $y)->drawOnto($character, ...$this->insignificant);
                 }
                 $solidity[$y][$x] = max($solidity[$y][$x] ?? 0, $character->solidity());
                 $lines[$y][$x] = $character;
